@@ -1,11 +1,8 @@
-# 🍽️ Food Image Classification with CNN & EfficientNet
-
-**Course:** Machine Learning II (ADSP 31018)  
-**Team:** Kathy Li, Kaylie Nguyen, Yifei Zhou, Olivia Rumere, Yuxuan  
+# Food Image Classification with CNN & EfficientNet
 
 ---
 
-## 📌 Business Problem
+## Business Problem
 
 As food services move to digital platforms, accurate food image recognition becomes critical for:
 
@@ -16,18 +13,18 @@ As food services move to digital platforms, accurate food image recognition beco
 
 Misclassification (e.g., *carbonara vs. bolognese*) leads to:
 
-- ❌ Wrong orders  
-- 💸 Refund costs  
-- 😡 Customer dissatisfaction  
+- Wrong orders  
+- Refund costs  
+- Customer dissatisfaction  
 
 Our goal:  
 > Build a high-accuracy food classification system using CNN-based deep learning.
 
 ---
 
-## 📊 Dataset
+## Dataset
 
-**Food-101**
+**[Food-101](https://huggingface.co/datasets/ethz/food101)**
 
 - 101 food categories  
 - 101,000 images  
@@ -42,7 +39,7 @@ Challenges:
 
 ---
 
-## 🔍 Exploratory Data Analysis
+## Exploratory Data Analysis
 
 Key findings:
 
@@ -57,7 +54,7 @@ Key findings:
 
 ---
 
-## 🧠 Models
+## Models
 
 ### 1️⃣ Custom CNN
 
@@ -95,7 +92,7 @@ Our setup:
 
 ---
 
-## 📈 Results
+## Results
 
 ### Custom CNN
 
@@ -122,7 +119,7 @@ Observations:
 
 ---
 
-## 🧪 Key Insights
+## Key Insights
 
 ### Why transfer learning wins
 
@@ -146,7 +143,7 @@ Although theoretically strong:
 
 ---
 
-## ⚠️ Limitations
+## Limitations
 
 - EfficientNet trained on subset (compute constraint)
 - Models optimized independently
@@ -154,7 +151,7 @@ Although theoretically strong:
 
 ---
 
-## 🚀 Future Work
+## Future Work
 
 - Freeze early EfficientNet layers
 - Class-balanced sampling
@@ -165,15 +162,14 @@ Although theoretically strong:
 
 ---
 
-## 🏆 Takeaways
+## Takeaways
 
-✔ Transfer learning is essential for fine-grained vision tasks  
-✔ Hierarchical design helps error interpretability  
-❗ But increases training complexity  
+- Transfer learning is essential for fine-grained vision tasks  
+- Hierarchical design helps error interpretability, but increases training complexity  
 
 ---
 
-## 📚 References
+## References
 
 - Food-101 (Bossard et al., 2014)
 - DeepFood (2016)
@@ -181,8 +177,3 @@ Although theoretically strong:
 - Transfer learning for food classification (Singh & Susan, 2023)
 - Hierarchical food classification (Pan et al., 2023)
 
----
-
-## 🙌 Acknowledgment
-
-This project was completed as part of **Machine Learning II**.
