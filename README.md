@@ -44,13 +44,28 @@ Challenges:
 Key findings:
 
 - Most images: `512×512`
+
+<img src="image/image_size_distribution.png" width="500">
+
+
 - Strong visual overlap between categories (e.g., soups, salads)
-- Natural hierarchy:
+
+<img src="image/similar_image.png" width="500">
+
+
+- Can be classified into 3 categories:
   - Appetizer
   - Main Course
   - Dessert
- 
-→ Motivated our **two-stage hierarchical model**
+
+---
+
+## Methodology
+
+We used two models: custom CNN and efficientNet-B0. For both models, we tried one-stage training and two-stage training.
+The output will be one of the 101 original categories.
+
+![Methodology](image/method.png)
 
 ---
 
@@ -59,21 +74,17 @@ Key findings:
 ### 1️⃣ Custom CNN
 
 #### One-stage
-- 2 Conv layers → FC → 101 classes  
-- Accuracy ≈ **9%**
+- Preprocessing: ensure 3 color channels, resize to 128 * 128 and normalize the pixel values to [-1,1]
+- Architecture:
+  - 2 Convolutional layers: 3->6->16 channels with ReLU and max pooling
+  - 3 fully connected layers resulting in 101-class output
 
 #### Two-stage (Hierarchical)
-Stage 1 → coarse class  
-Stage 2 → fine-grained class  
+- Architecture:
+  - 3 convolutional layers: 3->32->64->128 channels with ReLU and max pooling (output: 128*16*16)
+  - 3 fully connected layers: 128*16*16 -> 256 ->27-class output(Appetizer)/47-class output(Main Course)/27-class output(Dessert)
+  - Include dropout (p=0.5) after the first FC layer to reduce overfitting
 
-Improvements:
-
-- More structured errors
-- Better feature localization
-
-But:
-
-- Max accuracy ≈ **14.1%**
 
 ---
 
@@ -101,6 +112,10 @@ Our setup:
 One-stage | Severe misclassification |
 Two-stage | More meaningful confusion patterns |
 
+![cnn_result](image/CNN_result.png)
+![cnn_cm](image/CNN_cm.png)
+
+
 ---
 
 ### EfficientNet-B0
@@ -116,6 +131,10 @@ Observations:
 - Two-stage suffered from:
   - subclass imbalance
   - overfitting
+
+![EN_result](image/EN_result.png)
+![EN_result](image/EN_cm.png)
+
 
 ---
 
