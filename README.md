@@ -81,8 +81,8 @@ The output will be one of the 101 original categories.
 
 #### Two-stage (Hierarchical)
 - Architecture:
-  - 3 convolutional layers: 3->32->64->128 channels with ReLU and max pooling (output: 128*16*16)
-  - 3 fully connected layers: 128*16*16 -> 256 ->27-class output(Appetizer)/47-class output(Main Course)/27-class output(Dessert)
+  - 3 convolutional layers: 3 -> 32 -> 64 -> 128 channels with ReLU and max pooling (output: 128 * 16 * 16)
+  - 3 fully connected layers: 128 * 16 * 16 -> 256 -> 27-class output(Appetizer)/47-class output(Main Course)/27-class output(Dessert)
   - Include dropout (p=0.5) after the first FC layer to reduce overfitting
 
 
